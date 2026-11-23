@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Anual - Emprendimiento para la Productividad I</title>
+    <!-- Tailwind CSS para diseño responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        /* Paleta Institucional Colegio Montano */
+        .bg-institucional { background-color: #1F3C88; }
+        .text-institucional { color: #1F3C88; }
+        .bg-secundario { background-color: #3F72AF; }
+        .text-secundario { color: #3F72AF; }
+        .bg-acento { background-color: #F2C94C; }
+        .text-acento { color: #8C6D0F; }
+        .border-institucional { border-color: #1F3C88; }
+        .border-secundario { border-color: #3F72AF; }
+        
+        /* Estilos de pestañas activas */
+        .tab-btn.active {
+            background-color: #F2C94C;
+            color: #1F3C88;
+            font-weight: 700;
+            box-shadow: inset 0 -3px 0 #1F3C88;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
+    <header class="bg-institucional text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Logo e Información del Curso -->
+            <div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-start">
+                <img src="https://admisiones.colegiomontano.edu.gt/assets/img/logo-cm-blanco.webp" alt="Logo Colegio Montano" class="h-12 object-contain" onerror="this.src='https://placehold.co/150x50/1F3C88/FFFFFF?text=Colegio+Montano'">
+                <div>
+                    <h1 class="text-lg font-bold tracking-wide">Colegio Montano Cortijo</h1>
+                    <p class="text-xs text-slate-200"><i>Asistente Pedagógico Institucional</i></p>
+                </div>
+            </div>
+
+            <!-- Datos Identificadores -->
+            <div class="bg-[#172D6B] px-4 py-2 rounded-xl text-xs sm:text-sm flex flex-wrap gap-x-6 gap-y-1 justify-center border border-[#3F72AF]">
+                <span><i>Curso:</i> <b>Emprendimiento para la Productividad I (Hogar)</b></span>
+                <span><i>Grado:</i> <b>Primero Básico</b></span>
+                <span><i>Docente:</i> <b>Mélida García</b></span>
+                <span><i>Ciclo:</i> <b>2027</b></span>
+            </div>
+
+            <!-- Botón de Pantalla Completa -->
+            <button onclick="toggleFullScreen()" class="bg-acento text-slate-900 font-semibold px-4 py-2 rounded-xl shadow hover:bg-yellow-400 transition flex items-center gap-2 text-sm">
+                <span>🖥️</span> <i>Pantalla Completa</i>
+            </button>
+        </div>
+
+        <!-- NAVEGACIÓN HORIZONTAL POR PESTAÑAS -->
+        <nav class="bg-[#172D6B] border-t border-[#3F72AF]/50 overflow-x-auto">
+            <div class="max-w-7xl mx-auto flex whitespace-nowrap px-2">
+                <button onclick="switchTab(1)" id="tab-1" class="tab-btn active px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">I) Descriptor</button>
+                <button onclick="switchTab(2)" id="tab-2" class="tab-btn px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">II) Objetivos</button>
+                <button onclick="switchTab(3)" id="tab-3" class="tab-btn px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">III) Competencias</button>
+                <button onclick="switchTab(4)" id="tab-4" class="tab-btn px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">IV) Indicadores</button>
+                <button onclick="switchTab(5)" id="tab-5" class="tab-btn px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">V) Métodos Didácticos</button>
+                <button onclick="switchTab(6)" id="tab-6" class="tab-btn px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">VI) Bibliografía</button>
+                <button onclick="switchTab(7)" id="tab-7" class="tab-btn px-4 py-3 text-xs sm:text-sm font-medium transition hover:bg-[#3F72AF]/50 rounded-t-lg">VII) Contenidos</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL (PANEL DE PESTAÑAS) -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- PESTAÑA 1: DESCRIPTOR -->
+        <section id="content-1" class="tab-content space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-4 flex items-center gap-2">
+                    <span>📖</span> <i>I) Descriptor del Curso</i>
+                </h2>
+                <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+                    <p>Este es un curso teórico práctico, que se complementa con tres componentes: contabilidad, artes industriales y Educación para el hogar. Los estudiantes del grado de Primero Básico reciben el área de Educación para el hogar en la unidad tres y cuatro según el plan general del Colegio Montano, es por esta razón que en este plan solamente aparecen los contenidos de Unidad III y IV.</p>
+                    <p>En el área de Educación para el hogar se pretende desarrollar habilidades y destrezas motoras básicas. Se persigue motivar el interés en el aprovechamiento del tiempo. Encausar el liderazgo y la proactividad realizando actividades productivas, proyectos individuales que le permitan al estudiante aportar a su familia y que puedan ser proyectados a la comunidad.</p>
+                    <p>Aprovechamos el trabajo en equipo para cocinar recetas básicas de cocina guatemalteca, aplicando normas básicas de higiene alimentaria. Recordamos y aplicamos los hábitos y cualidades de un emprendedor; además de técnicas milenarias que han sobrevivido de generación en generación las cuales exigen concentración, paciencia, de alguna manera colaboran en la formación del carácter y generan creatividad. Invertimos nuestro tiempo preciado en algo productivo y útil.</p>
+                    <p>Dentro del nuevo enfoque queda establecido que la diferencia de género es cosa del pasado, hombres y mujeres comparten un espacio en común para alcanzar competencias que garantizan aprendizajes significativos para la vida y se desenvuelven como líderes emprendedores con una visión autogestora y con las mismas oportunidades para alcanzar el éxito.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 2: OBJETIVOS -->
+        <section id="content-2" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-4 flex items-center gap-2">
+                    <span>🎯</span> <i>II) Objetivos Generales</i>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <p class="text-slate-700 text-sm sm:text-base">Desarrollar habilidades y destrezas motoras básicas.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <p class="text-slate-700 text-sm sm:text-base">Motivar el interés en el aprovechamiento del tiempo.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <p class="text-slate-700 text-sm sm:text-base">Encausar el liderazgo y la proactividad.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <p class="text-slate-700 text-sm sm:text-base">Colaborar en la formación del carácter del adolescente e incentivar su creatividad.</p>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 md:col-span-2 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <p class="text-slate-700 text-sm sm:text-base">Fomentar la no diferencia de género: hombres y mujeres comparten un espacio en común para alcanzar competencias que garantizan aprendizajes significativos para la vida.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 3: COMPETENCIAS -->
+        <section id="content-3" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-4 flex items-center gap-2">
+                    <span>🏆</span> <i>III) Competencias del Área y Competencias CM</i>
+                </h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold text-secundario mb-3"><i>Competencias Académicas del Área</i></h3>
+                        <div class="space-y-3">
+                            <div class="p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                                <span class="font-bold text-institucional">2.</span> <span class="text-slate-700">Diferencia los principios tecnológicos con normas de calidad, seguridad, higiene y pertinencia en procesos de producción.</span>
+                            </div>
+                            <div class="p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                                <span class="font-bold text-institucional">3.</span> <span class="text-slate-700">Valora la importancia de administrar los bienes y recursos financieros para el desarrollo familiar y comunitario.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-secundario mb-3"><i>Competencias Blandas y Características</i></h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 text-sm">Creatividad</div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 text-sm">Pensamiento crítico</div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 text-sm">Trabajo en equipo</div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 text-sm">Capacidad de concentración</div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 text-sm">Fuerza de voluntad y esfuerzo</div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-700 text-sm">Productividad y liderazgo</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-semibold text-institucional mb-3"><i>Competencias CM Integradas (Institucionales)</i></h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Pensamiento crítico y resolución de problemas</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Colaboración y trabajo en equipo</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Competencias digitales</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Comunicación efectiva</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Creatividad e innovación</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Aprendizaje autónomo y adaptabilidad</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Conciencia global y cultural</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Ética y ciudadanía digital</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Gestión emocional y resiliencia</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Conciencia ecológica y sostenibilidad</div>
+                            <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-slate-800 text-sm font-medium">Desempeño de roles de liderazgo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 4: INDICADORES -->
+        <section id="content-4" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-4 flex items-center gap-2">
+                    <span>📊</span> <i>IV) Indicadores de Logro</i>
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Reconoce los principios del emprendimiento.</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Valora la cultura de su comunidad.</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Reconoce procesos y técnicas de producción.</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Reconoce la importancia de la aplicación de las normas de calidad, seguridad e higiene en los procesos de producción.</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Describe los aspectos y características que influyen en su vida personal y familiar.</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Explica la importancia de administrar los bienes familiares.</span>
+                    </div>
+                    <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 sm:col-span-2 flex items-center gap-3">
+                        <span class="w-2.5 h-2.5 rounded-full bg-institucional shrink-0"></span>
+                        <span class="text-slate-700">Se expresa con seguridad, autonomía y criterio.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 5: MÉTODOS DIDÁCTICOS -->
+        <section id="content-5" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-2 flex items-center gap-2">
+                    <span>💡</span> <i>V) Métodos Didácticos Institucionales</i>
+                </h2>
+                <p class="text-slate-600 mb-6 text-sm">Pedagogía constructivista y Laboratorio con Material Concreto estructurado bajo el modelo de <b>Período Doble (70 minutos)</b>.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-5 bg-blue-50/40 rounded-2xl border border-blue-100 space-y-2">
+                        <h3 class="font-bold text-institucional text-lg">1. Introducción Motivante</h3>
+                        <p class="text-slate-700 text-sm leading-relaxed">Activa el pre-saber del alumno y permite al maestro determinar un diagnóstico. Se implementa mediante canciones, discusiones, adivinanzas, lluvia de ideas y juegos.</p>
+                    </div>
+
+                    <div class="p-5 bg-blue-50/40 rounded-2xl border border-blue-100 space-y-2">
+                        <h3 class="font-bold text-institucional text-lg">2. Trabajo Individual</h3>
+                        <p class="text-slate-700 text-sm leading-relaxed">El alumno pone en el lugar de trabajo toda su potencialidad como individuo, habilidades y destrezas utilizando herramientas individuales. Técnicas utilizadas: trifolio, proyecto, carteles y estudio dirigido.</p>
+                    </div>
+
+                    <div class="p-5 bg-blue-50/40 rounded-2xl border border-blue-100 space-y-2">
+                        <h3 class="font-bold text-institucional text-lg">3. Trabajo en Equipo o Cooperativo</h3>
+                        <p class="text-slate-700 text-sm leading-relaxed">El alumno interactúa con sus compañeros desempeñando un rol con una meta determinada: <i>"Todos para uno y uno para todos"</i>. Pone a disposición del grupo sus destrezas unificándolas para lograr una verdadera interacción.</p>
+                    </div>
+
+                    <div class="p-5 bg-blue-50/40 rounded-2xl border border-blue-100 space-y-2">
+                        <h3 class="font-bold text-institucional text-lg">4. Plenaria</h3>
+                        <p class="text-slate-700 text-sm leading-relaxed">Momento fundamental para fomentar el hablar en público, exponer sentimientos y emociones al grupo, y explicar el trabajo o conclusión. Se realiza en forma rotativa para que todos experimenten el rol de expositor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 6: BIBLIOGRAFÍA -->
+        <section id="content-6" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-4 flex items-center gap-2">
+                    <span>📚</span> <i>VI) Bibliografía y Fuentes de Referencia</i>
+                </h2>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <span>Proyectos 7 Productividad y Desarrollo. Santillana, Guatemala última edición.</span>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <span>Publicaciones de Revistas o Periódicos que apoyen los diferentes temas.</span>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <span>Audiovisuales que refuerzan los procedimientos y contenidos.</span>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-3">
+                        <span class="text-institucional font-bold">•</span>
+                        <span>Guatemala, Ministerio de Educación. Malla Curricular de nivel básico.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PESTAÑA 7: CONTENIDOS -->
+        <section id="content-7" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl sm:text-2xl font-bold text-institucional mb-2 flex items-center gap-2">
+                    <span>📋</span> <i>VII) Contenidos (Unidad Única de Contenido - Área de Hogar)</i>
+                </h2>
+                <p class="text-slate-600 mb-6 text-sm">Conforme a la planificación institucional de Primero Básico, los contenidos correspondientes al área de hogar se desarrollan de forma concentrada.</p>
+
+                <div class="p-6 bg-amber-50/60 rounded-2xl border border-amber-200 space-y-4">
+                    <div class="flex items-center gap-2 border-b border-amber-200 pb-3">
+                        <span class="bg-amber-400 text-slate-900 font-bold px-3 py-1 rounded-lg text-xs">UNIDAD III Y IV</span>
+                        <h3 class="font-bold text-institucional text-lg">Contenidos Temáticos Integrales</h3>
+                    </div>
+                    <ol class="list-decimal list-inside space-y-3 text-slate-700">
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Origen y beneficios del crochet.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Cómo tejer cadeneta, medio punto, punto alto, medio punto alto, aumento y disminución en crochet.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Necesidades básicas de una familia.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Bienes familiares y su cuidado.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Cultura de ahorro.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Economía de tiempo y energía.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100">Presupuesto Familiar y administración de recursos.</li>
+                        <li class="p-2 bg-white rounded-lg border border-amber-100 font-medium text-institucional">Proyecto práctico: portavasos tejido a crochet.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-institucional text-white py-6 mt-12 text-center text-xs sm:text-sm border-t border-[#3F72AF]/50">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p><b>Colegio Montano Cortijo</b> - Excelencia Educativa y Formación Integral con Valores</p>
+            <p class="text-slate-300"><i>Asistente Pedagógico Institucional - Módulo de Planificación Anual Interactiva</i></p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        function switchTab(tabIndex) {
+            // Ocultar todos los contenidos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Desactivar todos los botones
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Mostrar el contenido seleccionado y activar el botón
+            document.getElementById(`content-${tabIndex}`).classList.remove('hidden');
+            document.getElementById(`tab-${tabIndex}`).classList.add('active');
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error("Error al intentar activar pantalla completa:", err);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
